@@ -1,0 +1,335 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --font-rubik: 'Rubik Wet Paint', cursive;
+    --font-unifraktur: 'UnifrakturMaguntia', cursive;
+}
+
+body {
+    font-family: var(--font-rubik);
+    background-color: var(--color-black);
+    color: var(--color-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header e Logo */
+.header {
+    background-color: var(--color-black);
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 2px solid var(--color-white);
+}
+
+.logo {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Títulos de seção */
+.section-title {
+    font-family: var(--font-unifraktur);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Seção de Fotos */
+.photos-section {
+    padding: 60px 0;
+    background-color: var(--color-black);
+}
+
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var(--color-white);
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+}
+
+.band-photo {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    background-color: #1a1a1a;
+}
+
+/* Seção Sobre */
+.about-section {
+    padding: 60px 0;
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: justify;
+    font-family: var(--font-rubik);
+}
+
+/* Seção de Vídeo */
+.video-section {
+    padding: 60px 0;
+    background-color: var(--color-black);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 3px solid var(--color-white);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Seção de Compra */
+.purchase-section {
+    padding: 60px 0;
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.purchase-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.btn {
+    font-family: var(--font-rubik);
+    font-size: 1.3rem;
+    padding: 20px 40px;
+    border: 3px solid var(--color-black);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-pix {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.btn-pix:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-paypal {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.btn-paypal:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-icon {
+    font-size: 1.5rem;
+}
+
+/* Modal do QR Code PIX */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    margin: 5% auto;
+    padding: 40px;
+    border: 3px solid var(--color-black);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    color: var(--color-black);
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    line-height: 1;
+}
+
+.close:hover {
+    opacity: 0.7;
+}
+
+.modal-title {
+    font-family: var(--font-unifraktur);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.qr-code-container {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: var(--color-white);
+    border: 3px solid var(--color-black);
+    display: inline-block;
+}
+
+#qr-code {
+    max-width: 100%;
+    height: auto;
+}
+
+.pix-instructions {
+    font-family: var(--font-rubik);
+    font-size: 1rem;
+    margin: 20px 0;
+    color: var(--color-black);
+}
+
+.pix-info {
+    margin: 20px 0;
+    text-align: left;
+    font-family: var(--font-rubik);
+}
+
+.pix-info p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.btn-copy {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-size: 1rem;
+    padding: 15px 30px;
+    margin-top: 20px;
+}
+
+.btn-copy:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 30px 0;
+    text-align: center;
+    border-top: 2px solid var(--color-white);
+    font-family: var(--font-rubik);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .photos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .band-photo {
+        height: 300px;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 15px 30px;
+    }
+
+    .modal-content {
+        padding: 30px 20px;
+    }
+
+    .modal-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        max-width: 200px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .purchase-buttons {
+        gap: 15px;
+    }
+}
+

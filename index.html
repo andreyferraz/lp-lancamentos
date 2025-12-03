@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lançamento CD - [Nome da Banda]</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Logo no topo -->
+    <header class="header">
+        <div class="container">
+            <img src="logo-banda.png" alt="Logo da Banda" class="logo" id="logo">
+        </div>
+    </header>
+
+    <!-- Seção principal -->
+    <main>
+        <!-- Fotos da banda -->
+        <section class="photos-section">
+            <div class="container">
+                <h2 class="section-title">A Banda</h2>
+                <div class="photos-grid">
+                    <div class="photo-item">
+                        <img src="foto-banda-1.jpg" alt="Foto da banda 1" class="band-photo">
+                    </div>
+                    <div class="photo-item">
+                        <img src="foto-banda-2.jpg" alt="Foto da banda 2" class="band-photo">
+                    </div>
+                    <div class="photo-item">
+                        <img src="foto-banda-3.jpg" alt="Foto da banda 3" class="band-photo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Texto sobre o lançamento -->
+        <section class="about-section">
+            <div class="container">
+                <h2 class="section-title">Sobre o Lançamento</h2>
+                <div class="about-content">
+                    <p class="about-text">
+                        Estamos muito felizes em anunciar o lançamento do nosso novo CD! Este trabalho representa meses de dedicação, paixão e muito som. Cada faixa foi cuidadosamente produzida para trazer a essência da nossa música.
+                    </p>
+                    <p class="about-text">
+                        O álbum está disponível agora e você pode garantir o seu exemplar através dos botões abaixo. Para compras no Brasil, utilize o PIX. Para compras internacionais, utilize o PayPal.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vídeo do YouTube -->
+        <section class="video-section">
+            <div class="container">
+                <h2 class="section-title">Ouça o Som</h2>
+                <div class="video-wrapper">
+                    <iframe 
+                        id="youtube-video"
+                        src="https://www.youtube.com/embed/VIDEO_ID_AQUI" 
+                        title="Vídeo da banda" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Botões de compra -->
+        <section class="purchase-section">
+            <div class="container">
+                <h2 class="section-title">Garanta o Seu CD</h2>
+                <div class="purchase-buttons">
+                    <button class="btn btn-pix" id="btn-pix">
+                        <span class="btn-icon">💳</span>
+                        Comprar com PIX (Brasil)
+                    </button>
+                    <button class="btn btn-paypal" id="btn-paypal">
+                        <span class="btn-icon">🌍</span>
+                        Comprar com PayPal (Internacional)
+                    </button>
+                </div>
+                
+                <!-- Modal do QR Code PIX -->
+                <div class="modal" id="pix-modal">
+                    <div class="modal-content">
+                        <span class="close" id="close-modal">&times;</span>
+                        <h3 class="modal-title">QR Code PIX</h3>
+                        <div class="qr-code-container">
+                            <canvas id="qr-code"></canvas>
+                        </div>
+                        <p class="pix-instructions">
+                            Escaneie o QR Code acima com o aplicativo do seu banco para realizar o pagamento via PIX.
+                        </p>
+                        <div class="pix-info">
+                            <p><strong>Chave PIX:</strong> <span id="pix-key">sua-chave-pix@email.com</span></p>
+                            <p><strong>Valor:</strong> R$ <span id="pix-value">50,00</span></p>
+                        </div>
+                        <button class="btn btn-copy" id="btn-copy-pix">Copiar Chave PIX</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 [Nome da Banda]. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
