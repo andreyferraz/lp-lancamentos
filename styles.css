@@ -78,8 +78,7 @@ body {
 
 .band-photo {
     width: 100%;
-    height: 400px;
-    object-fit: cover;
+    height: auto;
     display: block;
     background-color: #1a1a1a;
 }
