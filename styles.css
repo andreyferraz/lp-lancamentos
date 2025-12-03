@@ -68,7 +68,6 @@ body {
 .photo-item {
     position: relative;
     overflow: hidden;
-    border: 3px solid var(--color-white);
     transition: transform 0.3s ease;
 }
 
@@ -77,9 +76,11 @@ body {
 }
 
 .band-photo {
-    width: 100%;
+    max-width: 100%;
+    width: auto;
     height: auto;
     display: block;
+    margin: 0 auto;
     background-color: #1a1a1a;
 }
 
@@ -87,6 +88,10 @@ body {
 .about-section {
     padding: 60px 0;
     background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.about-section .section-title {
     color: var(--color-black);
 }
 
